@@ -1,14 +1,28 @@
 $(document).ready(function () {
+    init();
+});
+
+
+function init(){
+  scrollToStick();
+  toggleNavMenus();
+  showCollectionSlide();
+}
+
+
+function scrollToStick() {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
       $("nav").addClass(
         "shadow-md bg-white transition-all duration-300 fixed top-0 z-[1000]"
       );
     } else {
-      $("nav").removeClass("shadow-md fixed top-0 transparent");
+      $("nav").removeClass("shadow-md fixed top-0 transparent").addClass('bg-white');
     }
   });
+}
 
+function toggleNavMenus() {
   $("#mobile-menu-btn").click(function () {
     $("#mobile-menu").slideToggle();
   });
@@ -16,9 +30,7 @@ $(document).ready(function () {
   $("#mobile-dropdown-btn").click(function () {
     $("#mobile-dropdown").slideToggle();
   });
-
-  showCollectionSlide();
-});
+}
 
 function showCollectionSlide() {
   let index = 0;
