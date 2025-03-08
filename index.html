@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Responsive Navbar</title>
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body class="bg-white">
+    <!-- Nav-->
+    <nav
+      class="bg-transparent w-full z-60 transition-all duration-300 border-b"
+    >
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <!-- Logo -->
+        <a href="/" class="text-xl font-bold flex items-center">
+          <img
+            src="/assets/images/logo/logo.svg"
+            alt="Logo"
+            class="hidden md:block"
+          />
+          <img
+            src="/assets/images/logo/logo-mobile.svg"
+            alt="Mobile Logo"
+            class="md:hidden"
+          />
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Nav Links -->
+        <ul class="hidden md:flex space-x-8 text-gray-700 mr-6">
+          <li>
+            <a href="#" class="hover:text-blue-500 font-semibold">Home</a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-blue-500 font-semibold">About</a>
+          </li>
+
+          <!-- Dropdown Menu -->
+          <li class="relative group">
+            <a
+              href="#"
+              class="flex items-center hover:text-blue-500 font-semibold"
+            >
+              Collections ▼
+            </a>
+
+            <!-- Dropdown Content -->
+            <div
+              class="absolute right-0 dropdown hidden group-hover:block z-[50]"
+            >
+              <div class="bg-white border rounded-md min-w-[180px] p-2">
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Titan Collection</a
+                >
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Antique Collection</a
+                >
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Matrix Collection</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="#" class="hover:text-blue-500 font-semibold">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white p-6 shadow-md space-y-4 hidden"
+      >
+        <a href="#" class="block hover:text-blue-500 font-semibold">Home</a>
+        <a href="#" class="block hover:text-blue-500 font-semibold">About</a>
+        <div>
+          <button
+            id="mobile-dropdown-btn"
+            class="flex items-center w-full hover:text-blue-500 font-semibold"
+          >
+            Collections ▼
+          </button>
+          <div id="mobile-dropdown" class="ml-4 space-y-2 hidden">
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Titan Collection</a
+            >
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Antique Collection</a
+            >
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Matrix Collection</a
+            >
+          </div>
+        </div>
+        <a href="#" class="block hover:text-blue-500 font-semibold">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section-->
+    <section
+      class="relative w-full h-screen flex flex-col items-center justify-center text-center px-6"
+    >
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="/assets/videos/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="absolute inset-0 bg-black bg-opacity-50 z-[-1]"></div>
+
+      <div class="relative z-10 max-w-3xl px-4">
+        <h1
+          class="text-4xl md:text-6xl font-extrabold tracking-wide animate-fadeIn text-gray-100"
+        >
+          Redefining Luxury in Bath Fashion
+        </h1>
+        <p
+          class="text-lg md:text-xl mt-4 opacity-90 animate-fadeIn delay-200 text-gray-200"
+        >
+          Experience sophistication, craftsmanship, and elegance in every
+          detail.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          class="mt-6 flex flex-col md:flex-row lg:justify-center md:space-x-4 space-y-3 md:space-y-0 animate-fadeIn delay-400"
+        >
+          <a
+            href="#"
+            class="bg-blue-600 text-white px-6 py-3 rounded-sm text-lg font-semibold hover:bg-blue-500 transition-all"
+          >
+            Explore Collection
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12"
+    >
+      <div
+        class="w-full md:w-70 lg:w-70 flex gap-x-10 flex-col md:flex-row  justify-center"
+      >
+        <!-- Left Side: Title and Description -->
+        <div class="md:w-1/3 mb-8 md:mb-0 flex items-start justify-start flex-col">
+          <h2 class="text-4xl font-extrabold text-gray-800 tracking-wide font-serif uppercase">
+            Luxury Collections
+          </h2>
+          <p class="text-lg text-gray-600 mt-4 leading-relaxed text-justify">
+            Discover our exclusive range of luxury bathroom accessories, meticulously crafted to enhance your space with elegance and sophistication. From premium faucets and designer soap dispensers to exquisite towel holders and stylish vanity sets, our collection is designed to bring a touch of opulence to your everyday routine. Experience the perfect blend of functionality and aesthetics, elevating your bathroom into a sanctuary of luxury.
+          </p>
+          <a href="#" class="mt-6 inline-block bg-blue-ct text-white text-sm font-semibold py-2 px-6 rounded-md hover:bg-gray-700 transition-all duration-300">
+            View All Collection
+          </a>
+        </div>
+
+        <!-- Right Side: Slider -->
+        <div class="md:w-2/3 lg:w-1/3 relative overflow-hidden">
+          <div
+            id="collection-slider"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            <!-- Slide 1 -->
+            <div class="slide grid grid-cols-2 gap-4 w-full flex-shrink-0">
+              <div class="bg-white border rounded-lg aspect-square flex flex-col">
+                <img
+                  src="https://placehold.co/150"
+                  alt="Collection 1"
+                  class="w-full h-32 object-cover rounded-t"
+                />
+                <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">
+                  Modern Elegance
+                </h3>
+                <a
+                  href="#"
+                  class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-1 collection_link"
+                  >View More</a
+                >
+              </div>
+              <div class="bg-white border rounded-lg aspect-square flex flex-col">
+                <img
+                  src="https://placehold.co/150"
+                  alt="Collection 2"
+                  class="w-full h-32 object-cover rounded-t"
+                />
+                <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">
+                  Classic Luxury
+                </h3>
+                <a
+                  href="#"
+                  class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-1 collection_link"
+                  >View More</a
+                >
+              </div>
+              <div class="bg-white border rounded-lg aspect-square flex flex-col">
+                <img
+                  src="https://placehold.co/150"
+                  alt="Collection 3"
+                  class="w-full h-32 object-cover rounded-t"
+                />
+                <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">
+                  Minimalist Chic
+                </h3>
+                <a
+                  href="#"
+                  class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-1 collection_link"
+                  >View More</a
+                >
+              </div>
+              <div class="bg-white border rounded-lg aspect-square flex flex-col">
+                <img
+                  src="https://placehold.co/150"
+                  alt="Collection 4"
+                  class="w-full h-32 object-cover rounded-t"
+                />
+                <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">
+                  Rustic Charm
+                </h3>
+                <a
+                  href="#"
+                  class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-1 collection_link"
+                  >View More</a
+                >
+              </div>
+            </div>
+
+
+            
+          </div>
+        
+          <!-- Slider Navigation Buttons -->
+          <div class="flex justify-center mt-4">
+            <button id="prev" class="bg-blue-ct text-white p-2 rounded-sm mx-2">
+              &#10094;
+            </button>
+            <button id="next" class="bg-blue-ct text-white p-2 rounded-sm mx-2">
+              &#10095;
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </body>
+</html>
