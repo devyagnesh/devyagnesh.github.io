@@ -17,7 +17,7 @@ function scrollToStick() {
         "shadow-md bg-white transition-all duration-300 fixed top-0 z-[1000]"
       );
     } else {
-      $("nav").removeClass("shadow-md fixed top-0 transparent").addClass('bg-white');
+      $("nav").removeClass("shadow-md fixed top-0 transparent");
     }
   });
 }
