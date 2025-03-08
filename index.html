@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@
   </head>
   <body class="bg-white">
     <!-- Nav-->
-    <nav class="bg-white w-full z-60 transition-all duration-300 border-b">
+    <nav class="bg-white w-full py-2 z-60 transition-all duration-300 border-b">
       <div class="container mx-auto flex justify-between items-center p-4">
         <!-- Logo -->
         <a href="/" class="text-xl font-bold flex items-center">
@@ -50,10 +50,10 @@
         <!-- Nav Links -->
         <ul class="hidden md:flex space-x-8 text-gray-700 mr-6">
           <li>
-            <a href="#" class="hover:text-blue-500 font-semibold">Home</a>
+            <a href="/" class="hover:text-blue-500 font-semibold">Home</a>
           </li>
           <li>
-            <a href="#" class="hover:text-blue-500 font-semibold">About</a>
+            <a href="#about" class="hover:text-blue-500 font-semibold">About</a>
           </li>
 
           <!-- Dropdown Menu -->
@@ -84,7 +84,7 @@
           </li>
 
           <li>
-            <a href="#" class="hover:text-blue-500 font-semibold">Contact</a>
+            <a href="#contact" class="hover:text-blue-500 font-semibold">Contact</a>
           </li>
         </ul>
       </div>
@@ -94,8 +94,8 @@
         id="mobile-menu"
         class="md:hidden bg-white p-6 shadow-md space-y-4 hidden"
       >
-        <a href="#" class="block hover:text-blue-500 font-semibold">Home</a>
-        <a href="#" class="block hover:text-blue-500 font-semibold">About</a>
+        <a href="/" class="block hover:text-blue-500 font-semibold">Home</a>
+        <a href="#about" class="block hover:text-blue-500 font-semibold">About</a>
         <div>
           <button
             id="mobile-dropdown-btn"
@@ -115,7 +115,7 @@
             >
           </div>
         </div>
-        <a href="#" class="block hover:text-blue-500 font-semibold">Contact</a>
+        <a href="#contact" class="block hover:text-blue-500 font-semibold">Contact</a>
       </div>
     </nav>
 
@@ -371,7 +371,7 @@
     </section>
 
     <!-- about us section -->
-    <section class="block min-h-screen max-w-6xl mx-auto text-center">
+    <section class="block min-h-screen max-w-6xl mx-auto text-center" id="about">
       <h2 class="text-3xl font-bold text-gray-800 mb-8">
         About Kaba | How Kaba Works
       </h2>
@@ -541,16 +541,145 @@
       </div>
     </section>
 
+    <!-- contact us section-->
+    <section class="w-full py-16 px-6 border-t" id="contact">
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12"
+      >
+        <!-- Left Side: Title, Text, Contact Info -->
+        <div class="w-full md:w-1/2">
+          <h2 class="text-4xl font-bold text-gray-800">Get in Touch</h2>
+          <p class="text-gray-600 mt-4">
+            Filling out this form will help us assist you better. We will get
+            back to you as soon as possible.
+          </p>
+
+          <!-- Contact Information -->
+          <div class="mt-6 space-y-4">
+            <!-- Address -->
+            <div class="flex items-center gap-4">
+              <span class="text-blue-600 text-2xl">&#128205;</span>
+              <p class="text-gray-700">
+                Plot No. G-829, Kishan Gate Lodhika GIDC Metoda, Rajkot-360021
+                Gujarat-India
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center gap-4">
+              <span class="text-blue-600 text-2xl">&#128231;</span>
+              <p class="text-gray-700">contact@kaba.com</p>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+              <span class="text-blue-600 text-2xl">&#128222;</span>
+              <p class="text-gray-700">(02827)287985</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Contact Form -->
+        <div class="w-full md:w-1/2 bg-white border p-8 rounded-md">
+          <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- First Name -->
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="Enter first name"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <!-- Last Name -->
+              <div>
+                <label class="block text-gray-700 font-medium mb-1"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="Enter last name"
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                placeholder="Enter email"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                placeholder="Enter phone number"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Address 1 -->
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Address 1</label
+              >
+              <input
+                type="text"
+                placeholder="Enter address"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Address 2 -->
+            <div>
+              <label class="block text-gray-700 font-medium mb-1"
+                >Address 2 (Optional)</label
+              >
+              <input
+                type="text"
+                placeholder="Enter address (if applicable)"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <!-- Submit Button (Full Width) -->
+            <button
+              type="submit"
+              class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- google map location section-->
     <section class="w-full h-[400px]">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.0958073337456!2d70.67295137435933!3d22.237097979732045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ccf93488dfef%3A0x7f6c8bbc1908827a!2sKishan%20Gate%20Rd%2C%20Metoda%2C%20Gujarat%20360021!5e1!3m2!1sen!2sin!4v1741447663705!5m2!1sen!2sin"
-        class="w-full h-full" 
+        class="w-full h-full"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </section>
 
+    <!-- news letter section-->
     <section class="w-full bg-[#1e40af] text-white py-6 px-4">
       <div
         class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
@@ -581,5 +710,12 @@
         </form>
       </div>
     </section>
+
+    <!--footer-->
+    <footer class="bg-gray-900 py-10 text-center">
+      <p class="text-gray-400 text-sm">
+        &copy; 2025 Kaba. All rights reserved.
+      </p>
+    </footer>
   </body>
 </html>
