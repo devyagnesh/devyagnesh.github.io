@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiba | Bathroom Accessories</title>
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body class="bg-white">
+    <div
+      id="productModal"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden p-4 transition-opacity duration-300"
+    >
+      <div
+        class="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+      >
+        <div class="flex justify-between items-center border-b pb-3 mb-3">
+          <h3 class="text-xl font-semibold">Order Product</h3>
+          <button
+            id="closeModal"
+            class="text-gray-500 hover:text-gray-700 text-lg"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="w-full lg:w-full md:w-2/3">
+            <form>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  class="border p-2 rounded w-full"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="border p-2 rounded w-full"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="border p-2 rounded w-full"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  class="border p-2 rounded w-full"
+                />
+                <input
+                  type="number"
+                  placeholder="Product Quantity"
+                  class="border p-2 rounded w-full"
+                />
+                <input
+                  type="text"
+                  placeholder="Pincode"
+                  class="border p-2 rounded w-full"
+                />
+                <input
+                  type="text"
+                  placeholder="Address 1"
+                  class="border p-2 rounded w-full sm:col-span-2"
+                />
+                <input
+                  type="text"
+                  placeholder="Address 2"
+                  class="border p-2 rounded w-full sm:col-span-2"
+                />
+                <textarea
+                  placeholder="Description"
+                  class="border p-2 rounded w-full sm:col-span-2"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="mt-4 w-full bg-blue-ct text-white py-2 rounded hover:bg-blue-600"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Nav-->
+    <nav
+      class="bg-white w-full py-2 z-60 transition-all duration-300 border-b smooth-nav-fix"
+    >
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <!-- Logo -->
+        <a href="/" class="text-xl font-bold flex items-center">
+          <img
+            src="/assets/images/logo/logo.svg"
+            alt="Logo"
+            class="hidden md:block ml-2"
+          />
+          <img
+            src="/assets/images/logo/logo-mobile.svg"
+            alt="Mobile Logo"
+            class="md:hidden ml-2"
+          />
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Nav Links -->
+        <ul class="hidden md:flex space-x-8 text-gray-700 mr-6">
+          <li>
+            <a href="/" class="hover:text-blue-500 font-semibold">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="hover:text-blue-500 font-semibold">About</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="hover:text-blue-500 font-semibold"
+              >Contact</a
+            >
+          </li>
+
+          <li>
+            <a href="/cart.html" class="hover:text-blue-500 font-semibold"
+              >Cart</a
+            >
+          </li>
+
+          <!-- Dropdown Menu -->
+          <li class="relative group">
+            <a
+              href="#"
+              class="flex items-center hover:text-blue-500 font-semibold"
+            >
+              Collections ▼
+            </a>
+
+            <!-- Dropdown Content -->
+            <div
+              class="absolute right-0 dropdown hidden group-hover:block z-[50]"
+            >
+              <div class="bg-white border rounded-md min-w-[180px] p-2">
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Titan Collection</a
+                >
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Antique Collection</a
+                >
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Matrix Collection</a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white p-6 shadow-md space-y-4 hidden"
+      >
+        <a href="/" class="block hover:text-blue-500 font-semibold">Home</a>
+        <a href="#about" class="block hover:text-blue-500 font-semibold"
+          >About</a
+        >
+        <a href="#contact" class="block hover:text-blue-500 font-semibold"
+          >Contact</a
+        >
+        <a href="/cart.html" class="block hover:text-blue-500 font-semibold"
+          >Cart</a
+        >
+        <div>
+          <button
+            id="mobile-dropdown-btn"
+            class="flex items-center w-full hover:text-blue-500 font-semibold"
+          >
+            Collections ▼
+          </button>
+          <div id="mobile-dropdown" class="ml-4 space-y-2 hidden">
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Titan Collection</a
+            >
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Antique Collection</a
+            >
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Matrix Collection</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="min-h-50 flex flex-col items-center justify-center text-center bg-white p-10"
+    >
+      <!-- Icon -->
+      <div class="mb-6">
+        <svg
+          class="w-16 h-16 text-gray-700"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 4M7 13l-1.5 4M16 16h-8M6.5 17h11M9 21h6"
+          />
+        </svg>
+      </div>
+
+      <!-- Content -->
+      <h1 class="text-5xl font-bold text-gray-800 mb-4">Your Shopping Cart</h1>
+      <p class="text-lg text-gray-600 max-w-2xl">
+        Review your selected items, adjust quantities, and proceed to checkout
+        with ease. Enjoy a seamless shopping experience with us.
+      </p>
+    </section>
+
+    <section class="p-6 bg-white min-h-screen flex items-center justify-center">
+      <div class="max-w-6xl w-full bg-white p-6 flex flex-col">
+        <div
+          class="w-full bg-gray-50 p-4 rounded-sm border overflow-y-auto max-h-[400px]"
+        >
+          <!-- Product Card -->
+          <div class="flex items-center bg-white p-4 rounded-sm mb-4">
+            <!-- Product Image -->
+            <img
+              src="https://omenindia.com/uploads/products/1/60011668185087.jpg"
+              alt="Product"
+              class="w-24 h-24 object-cover rounded-lg"
+            />
+
+            <!-- Product Details -->
+            <div class="ml-4 flex-1">
+              <p class="text-lg font-medium">Product Name</p>
+              <p class="text-sm text-gray-500">ID: 123456</p>
+
+              <!-- Quantity Adjustment -->
+              <div class="mt-2 flex items-center space-x-2">
+                <button class="px-2 py-1 bg-gray-200 rounded">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  class="w-12 text-center border rounded"
+                />
+                <button class="px-2 py-1 bg-gray-200 rounded">+</button>
+              </div>
+            </div>
+
+            <!-- Remove Button -->
+            <button
+              class="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+
+          <div class="flex items-center bg-white p-4 rounded-sm mb-4">
+            <!-- Product Image -->
+            <img
+              src="https://omenindia.com/uploads/products/1/60011668185087.jpg"
+              alt="Product"
+              class="w-24 h-24 object-cover rounded-lg"
+            />
+
+            <!-- Product Details -->
+            <div class="ml-4 flex-1">
+              <p class="text-lg font-medium">Product Name</p>
+              <p class="text-sm text-gray-500">ID: 123456</p>
+
+              <!-- Quantity Adjustment -->
+              <div class="mt-2 flex items-center space-x-2">
+                <button class="px-2 py-1 bg-gray-200 rounded">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  class="w-12 text-center border rounded"
+                />
+                <button class="px-2 py-1 bg-gray-200 rounded">+</button>
+              </div>
+            </div>
+
+            <!-- Remove Button -->
+            <button
+              class="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+
+          <div class="flex items-center bg-white p-4 rounded-sm mb-4">
+            <!-- Product Image -->
+            <img
+              src="https://omenindia.com/uploads/products/1/60011668185087.jpg"
+              alt="Product"
+              class="w-24 h-24 object-cover rounded-lg"
+            />
+
+            <!-- Product Details -->
+            <div class="ml-4 flex-1">
+              <p class="text-lg font-medium">Product Name</p>
+              <p class="text-sm text-gray-500">ID: 123456</p>
+
+              <!-- Quantity Adjustment -->
+              <div class="mt-2 flex items-center space-x-2">
+                <button class="px-2 py-1 bg-gray-200 rounded">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  class="w-12 text-center border rounded"
+                />
+                <button class="px-2 py-1 bg-gray-200 rounded">+</button>
+              </div>
+            </div>
+
+            <!-- Remove Button -->
+            <button
+              class="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+
+          <div class="flex items-center bg-white p-4 rounded-sm mb-4">
+            <!-- Product Image -->
+            <img
+              src="https://omenindia.com/uploads/products/1/60011668185087.jpg"
+              alt="Product"
+              class="w-24 h-24 object-cover rounded-lg"
+            />
+
+            <!-- Product Details -->
+            <div class="ml-4 flex-1">
+              <p class="text-lg font-medium">Product Name</p>
+              <p class="text-sm text-gray-500">ID: 123456</p>
+
+              <!-- Quantity Adjustment -->
+              <div class="mt-2 flex items-center space-x-2">
+                <button class="px-2 py-1 bg-gray-200 rounded">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  class="w-12 text-center border rounded"
+                />
+                <button class="px-2 py-1 bg-gray-200 rounded">+</button>
+              </div>
+            </div>
+
+            <!-- Remove Button -->
+            <button
+              class="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+
+          <div class="flex items-center bg-white p-4 rounded-sm mb-4">
+            <!-- Product Image -->
+            <img
+              src="https://omenindia.com/uploads/products/1/60011668185087.jpg"
+              alt="Product"
+              class="w-24 h-24 object-cover rounded-lg"
+            />
+
+            <!-- Product Details -->
+            <div class="ml-4 flex-1">
+              <p class="text-lg font-medium">Product Name</p>
+              <p class="text-sm text-gray-500">ID: 123456</p>
+
+              <!-- Quantity Adjustment -->
+              <div class="mt-2 flex items-center space-x-2">
+                <button class="px-2 py-1 bg-gray-200 rounded">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  class="w-12 text-center border rounded"
+                />
+                <button class="px-2 py-1 bg-gray-200 rounded">+</button>
+              </div>
+            </div>
+
+            <!-- Remove Button -->
+            <button
+              class="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+
+          <div class="flex items-center bg-white p-4 rounded-sm mb-4">
+            <!-- Product Image -->
+            <img
+              src="https://omenindia.com/uploads/products/1/60011668185087.jpg"
+              alt="Product"
+              class="w-24 h-24 object-cover rounded-lg"
+            />
+
+            <!-- Product Details -->
+            <div class="ml-4 flex-1">
+              <p class="text-lg font-medium">Product Name</p>
+              <p class="text-sm text-gray-500">ID: 123456</p>
+
+              <!-- Quantity Adjustment -->
+              <div class="mt-2 flex items-center space-x-2">
+                <button class="px-2 py-1 bg-gray-200 rounded">-</button>
+                <input
+                  type="number"
+                  value="1"
+                  class="w-12 text-center border rounded"
+                />
+                <button class="px-2 py-1 bg-gray-200 rounded">+</button>
+              </div>
+            </div>
+
+            <!-- Remove Button -->
+            <button
+              class="ml-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+          <!-- End Product Card -->
+        </div>
+
+        <!-- Buy Button -->
+        <div class="mt-4 text-right">
+          <button
+            type="button"
+            class="buy-btn px-6 py-2 bg-blue-ct text-white rounded-md hover:bg-blue-400"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="bg-gray-900 py-10 text-center">
+      <p class="text-gray-400 text-sm">
+        &copy; 2025 Kiba. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

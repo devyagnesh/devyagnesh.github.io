@@ -13,7 +13,9 @@
   </head>
   <body class="bg-white">
     <!-- Nav-->
-    <nav class="bg-white w-full py-2 z-60 transition-all duration-300 border-b">
+    <nav
+      class="bg-white w-full py-2 z-60 transition-all duration-300 border-b smooth-nav-fix"
+    >
       <div class="container mx-auto flex justify-between items-center p-4">
         <!-- Logo -->
         <a href="/" class="text-xl font-bold flex items-center">
@@ -56,6 +58,18 @@
             <a href="#about" class="hover:text-blue-500 font-semibold">About</a>
           </li>
 
+          <li>
+            <a href="#contact" class="hover:text-blue-500 font-semibold"
+              >Contact</a
+            >
+          </li>
+
+          <li>
+            <a href="/cart.html" class="hover:text-blue-500 font-semibold"
+              >Cart</a
+            >
+          </li>
+
           <!-- Dropdown Menu -->
           <li class="relative group">
             <a
@@ -70,7 +84,7 @@
               class="absolute right-0 dropdown hidden group-hover:block z-[50]"
             >
               <div class="bg-white border rounded-md min-w-[180px] p-2">
-                <a href="/products.html" class="block p-3 hover:bg-gray-200 rounded"
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
                   >Titan Collection</a
                 >
                 <a href="#" class="block p-3 hover:bg-gray-200 rounded"
@@ -82,10 +96,6 @@
               </div>
             </div>
           </li>
-
-          <li>
-            <a href="#contact" class="hover:text-blue-500 font-semibold">Contact</a>
-          </li>
         </ul>
       </div>
 
@@ -95,7 +105,15 @@
         class="md:hidden bg-white p-6 shadow-md space-y-4 hidden"
       >
         <a href="/" class="block hover:text-blue-500 font-semibold">Home</a>
-        <a href="#about" class="block hover:text-blue-500 font-semibold">About</a>
+        <a href="#about" class="block hover:text-blue-500 font-semibold"
+          >About</a
+        >
+        <a href="#contact" class="block hover:text-blue-500 font-semibold"
+          >Contact</a
+        >
+        <a href="/cart.html" class="block hover:text-blue-500 font-semibold"
+          >Cart</a
+        >
         <div>
           <button
             id="mobile-dropdown-btn"
@@ -104,7 +122,7 @@
             Collections ▼
           </button>
           <div id="mobile-dropdown" class="ml-4 space-y-2 hidden">
-            <a href="/products.html" class="block hover:bg-gray-200 p-2 rounded"
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
               >Titan Collection</a
             >
             <a href="#" class="block hover:bg-gray-200 p-2 rounded"
@@ -115,7 +133,6 @@
             >
           </div>
         </div>
-        <a href="#contact" class="block hover:text-blue-500 font-semibold">Contact</a>
       </div>
     </nav>
 
@@ -371,7 +388,10 @@
     </section>
 
     <!-- about us section -->
-    <section class="bg-white block min-h-screen max-w-6xl mx-auto text-center" id="about">
+    <section
+      class="bg-white block min-h-screen max-w-6xl mx-auto text-center"
+      id="about"
+    >
       <h2 class="text-3xl font-bold text-gray-800 mb-8">
         About Kiba | How Kiba Works
       </h2>
