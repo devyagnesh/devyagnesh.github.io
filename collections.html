@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiba | Bathroom Accessories</title>
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body class="bg-white">
+    <!-- Nav-->
+    <nav
+      class="bg-white w-full py-2 z-60 transition-all duration-300 border-b smooth-nav-fix"
+    >
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <!-- Logo -->
+        <a href="/" class="text-xl font-bold flex items-center">
+          <img
+            src="/assets/images/logo/logo.svg"
+            alt="Logo"
+            class="hidden md:block ml-2"
+          />
+          <img
+            src="/assets/images/logo/logo-mobile.svg"
+            alt="Mobile Logo"
+            class="md:hidden ml-2"
+          />
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Nav Links -->
+        <ul class="hidden md:flex space-x-8 text-gray-700 mr-6">
+          <li>
+            <a href="/" class="hover:text-blue-500 font-semibold">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="hover:text-blue-500 font-semibold">About</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="hover:text-blue-500 font-semibold"
+              >Contact</a
+            >
+          </li>
+
+          <li>
+            <a href="/cart.html" class="hover:text-blue-500 font-semibold"
+              >Cart</a
+            >
+          </li>
+
+          <!-- Dropdown Menu -->
+          <li class="relative group">
+            <a
+              href="#"
+              class="flex items-center hover:text-blue-500 font-semibold"
+            >
+              Collections ▼
+            </a>
+
+            <!-- Dropdown Content -->
+            <div
+              class="absolute right-0 dropdown hidden group-hover:block z-[50]"
+            >
+              <div class="bg-white border rounded-md min-w-[180px] p-2">
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Titan Collection</a
+                >
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Antique Collection</a
+                >
+                <a href="#" class="block p-3 hover:bg-gray-200 rounded"
+                  >Matrix Collection</a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white p-6 shadow-md space-y-4 hidden"
+      >
+        <a href="/" class="block hover:text-blue-500 font-semibold">Home</a>
+        <a href="#about" class="block hover:text-blue-500 font-semibold"
+          >About</a
+        >
+        <a href="#contact" class="block hover:text-blue-500 font-semibold"
+          >Contact</a
+        >
+        <a href="/cart.html" class="block hover:text-blue-500 font-semibold"
+          >Cart</a
+        >
+        <div>
+          <button
+            id="mobile-dropdown-btn"
+            class="flex items-center w-full hover:text-blue-500 font-semibold"
+          >
+            Collections ▼
+          </button>
+          <div id="mobile-dropdown" class="ml-4 space-y-2 hidden">
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Titan Collection</a
+            >
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Antique Collection</a
+            >
+            <a href="#" class="block hover:bg-gray-200 p-2 rounded"
+              >Matrix Collection</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="min-h-50 flex flex-col items-center justify-center text-center bg-white p-10"
+    >
+
+      <!-- Content -->
+      <h1 class="text-5xl font-bold text-gray-800 mb-4">Our Collection</h1>
+      <p class="text-lg text-gray-400 max-w-2xl">
+        Discover a curated selection of premium bathroom accessories designed to
+        elevate your space. From sleek soap dispensers to elegant towel racks,
+        our collection combines functionality with style. Transform your
+        bathroom into a sanctuary with high-quality essentials crafted for
+        modern living.
+      </p>
+    </section>
+
+    <section class="min-h-screen flex flex-col items-center justify-start text-center bg-white p-2 mb-4">
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-6xl">
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 3" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Minimalist Chic</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 4" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Rustic Charm</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 5" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Industrial Style</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+
+
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 1" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Modern Elegance</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+    
+        <div class="bg-white border rounded-lg flex flex-col">
+          <img src="https://placehold.co/150" alt="Collection 2" class="w-full h-32 object-cover rounded-t" />
+          <h3 class="text-blue-ct text-base font-semibold mt-2 text-left px-2">Classic Luxury</h3>
+          <a href="#" class="text-blue-ct text-sm mt-1 underline text-left px-2 pb-2 collection_link">View More</a>
+        </div>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="bg-gray-900 py-10 text-center">
+      <p class="text-gray-400 text-sm">
+        &copy; 2025 Kiba. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
