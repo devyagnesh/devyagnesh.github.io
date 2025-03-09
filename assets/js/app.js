@@ -1,14 +1,13 @@
 $(document).ready(function () {
-    init();
+  init();
 });
 
-
-function init(){
+function init() {
   scrollToStick();
+  showProductPurchaseModel();
   toggleNavMenus();
   showCollectionSlide();
 }
-
 
 function scrollToStick() {
   $(window).scroll(function () {
@@ -51,5 +50,25 @@ function showCollectionSlide() {
   $("#prev").click(function () {
     index = (index - 1 + totalSlides) % totalSlides;
     updateSlider();
+  });
+}
+
+function showProductPurchaseModel() {
+  if ($(".buy-btn").length) {
+    $(".buy-btn").click(function () {
+      $("nav").removeClass("shadow-md fixed top-0 transparent")
+      let productName = $(this).data("name");
+      let productCode = $(this).data("code");
+      let productImage = $(this).data("image");
+
+      $("#modalProductName").text(productName);
+      $("#modalProductCode").text(productCode);
+      $("#modalProductImage").attr("src", productImage);
+      $("#productModal").removeClass("hidden");
+    });
+  }
+
+  $("#closeModal").click(function () {
+    $("#productModal").addClass("hidden");
   });
 }
