@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="bingbot" content="noindex, nofollow" />
+    <title>Kiba | View Products</title>
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body class="flex min-h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 text-white min-h-screen flex flex-col p-4">
+      <!-- User Profile -->
+      <div
+        class="flex flex-col items-center border-b border-gray-700 pb-4 mb-4"
+      >
+        <img
+          class="w-16 h-16 rounded-full"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+          alt="User Profile"
+        />
+        <h2 class="mt-2 text-lg font-semibold">Admin User</h2>
+        <p class="text-sm text-gray-400">admin@example.com</p>
+      </div>
+
+      <!-- Menu Items -->
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li>
+            <a href="/dashboard.html" class="block p-2 rounded-lg hover:bg-gray-700"
+              >Dashboard</a
+            >
+          </li>
+
+          <!-- Meta Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Meta information
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/edit-meta.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Edit meta information</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Collections Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Collections
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/add-collection.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Add Collection</a
+                  >
+                </li>
+                <li>
+                  <a href="/view-collections.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >View Collections</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Products Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Products
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/add-product.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Add Product</a
+                  >
+                </li>
+                <li>
+                  <a href="/view-products.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >View Products</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Profile Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Profile
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/edit-profile.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Edit your profile</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- System Config -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                System Config
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/system-config.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Manage system config</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Logout Button -->
+      <button
+        class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition mt-4"
+      >
+        Logout
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="h-screen w-full overflow-y-auto no-scrollbar p-6">
+      <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">System Configuration</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Clear System Cache -->
+            <div class="bg-blue-50 p-4 rounded-lg shadow-md text-center">
+                <div class="text-blue-600 text-3xl mb-2">🧹</div>
+                <h3 class="font-semibold text-lg mb-2">Clear Cache</h3>
+                <p class="text-sm text-gray-600 mb-3">Remove application cache and refresh routes to enhance system performance.</p>
+                <button id="clearCache" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Clear</button>
+            </div>
+            
+            <!-- Download Database -->
+            <div class="bg-green-50 p-4 rounded-lg shadow-md text-center">
+                <div class="text-green-600 text-3xl mb-2">💾</div>
+                <h3 class="font-semibold text-lg mb-2">Download Database</h3>
+                <p class="text-sm text-gray-600 mb-3">Create and download a backup of your database for safekeeping.</p>
+                <button id="downloadDatabase" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Download</button>
+            </div>
+            
+            <!-- Upload Database for Restore -->
+            <div class="bg-red-50 p-4 rounded-lg shadow-md text-center">
+                <div class="text-red-600 text-3xl mb-2">📤</div>
+                <h3 class="font-semibold text-lg mb-2">Restore Database</h3>
+                <p class="text-sm text-gray-600 mb-3">Upload a backup file (.sql or .zip) to restore your database.</p>
+                <input type="file" id="uploadDatabase" accept=".sql,.zip" class="hidden">
+                <button type="button" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition" onclick="$('#uploadDatabase').click();">Upload</button>
+                <p class="text-xs text-red-500 mt-2">Warning: This will overwrite all existing data.</p>
+            </div>
+        </div>
+    </section>
+    </main>
+  </body>
+</html>

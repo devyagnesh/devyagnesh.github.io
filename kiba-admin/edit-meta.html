@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="bingbot" content="noindex, nofollow" />
+    <title>Kiba | Edit Meta Information</title>
+    <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body class="flex min-h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 text-white min-h-screen flex flex-col p-4">
+      <!-- User Profile -->
+      <div
+        class="flex flex-col items-center border-b border-gray-700 pb-4 mb-4"
+      >
+        <img
+          class="w-16 h-16 rounded-full"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+          alt="User Profile"
+        />
+        <h2 class="mt-2 text-lg font-semibold">Admin User</h2>
+        <p class="text-sm text-gray-400">admin@example.com</p>
+      </div>
+
+      <!-- Menu Items -->
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li>
+            <a href="/dashboard.html" class="block p-2 rounded-lg hover:bg-gray-700"
+              >Dashboard</a
+            >
+          </li>
+
+          <!-- Meta Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Meta information
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/edit-meta.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Edit meta information</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Collections Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Collections
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/add-collection.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Add Collection</a
+                  >
+                </li>
+                <li>
+                  <a href="/view-collections.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >View Collections</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Products Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Products
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/add-product.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Add Product</a
+                  >
+                </li>
+                <li>
+                  <a href="/view-products.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >View Products</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- Profile Dropdown -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                Profile
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/edit-profile.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Edit your profile</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <!-- System Config -->
+          <li>
+            <details class="group menu-dropdown">
+              <summary
+                class="flex justify-between items-center p-2 rounded-lg cursor-pointer hover:bg-gray-700"
+              >
+                System Config
+                <span class="group-open:rotate-180 transition-transform"
+                  >▼</span
+                >
+              </summary>
+              <ul class="pl-4 mt-2 space-y-1">
+                <li>
+                  <a href="/system-config.html" class="block p-2 rounded-lg hover:bg-gray-700"
+                    >Manage system config</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Logout Button -->
+      <button
+        class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition mt-4"
+      >
+        Logout
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="h-screen w-full overflow-y-auto no-scrollbar p-6">
+      <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-full mx-auto">
+        <h2 class="text-2xl font-bold mb-4">Edit Meta Information</h2>
+    
+        <!-- Favicon and Logo Upload in One Row -->
+        <div class="mb-4 grid grid-cols-2 gap-4">
+            <!-- Favicon Upload -->
+            <div>
+                <label class="block font-semibold mb-2">Favicon Icon</label>
+                <p class="text-sm text-gray-600 mb-2">A recognizable favicon improves brand recognition and user trust.</p>
+                <input type="file" id="faviconUpload" accept="image/*" class="hidden">
+                <div class="flex items-center space-x-4">
+                    <img id="faviconPreview" src="https://placehold.co/40" class="w-10 h-10 rounded-md border" alt="Favicon Preview">
+                    <button class="upload-btn px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" data-input="faviconUpload">Upload</button>
+                </div>
+            </div>
+            
+            <!-- Website Logo Upload -->
+            <div>
+                <label class="block font-semibold mb-2">Website Logo</label>
+                <p class="text-sm text-gray-600 mb-2">A clear logo enhances branding and helps with search engine trust signals.</p>
+                <input type="file" id="logoUpload" accept="image/*" class="hidden">
+                <div class="flex items-center space-x-4">
+                    <img id="logoPreview" src="https://kiba.test/assets/images/logo/logo.svg" class="w-20 h-20 rounded-md border px-2" alt="Logo Preview">
+                    <button class="upload-btn px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" data-input="logoUpload">Upload</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Website Title -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-2">Website Title</label>
+            <p class="text-sm text-gray-600 mb-2">The title is the most important SEO element. It should include primary keywords and be compelling.</p>
+            <input type="text" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400" placeholder="Enter website title">
+        </div>
+    
+        <!-- Meta Keywords (Deprecated, but can help for internal search) -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-2">Meta Keywords</label>
+            <p class="text-sm text-gray-600 mb-2">Although not used by Google, keywords can be useful for internal search optimization.</p>
+            <input type="text" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400" placeholder="Enter meta keywords (comma separated)">
+        </div>
+    
+        <!-- Meta Description -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-2">Meta Description</label>
+            <p class="text-sm text-gray-600 mb-2">A well-written meta description improves click-through rates (CTR) in search engine results.</p>
+            <textarea class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400" placeholder="Enter meta description" rows="3"></textarea>
+        </div>
+    
+        <!-- Meta Author -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-2">Meta Author</label>
+            <p class="text-sm text-gray-600 mb-2">Helps establish authority and credibility for search engines and users.</p>
+            <input type="text" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400" placeholder="Enter author name">
+        </div>
+    
+        <!-- Meta Robots -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-2">Meta Robots</label>
+            <p class="text-sm text-gray-600 mb-2">Controls search engine indexing and crawling behavior.</p>
+            <select class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400">
+                <option value="index, follow">Index, Follow</option>
+                <option value="noindex, follow">No Index, Follow</option>
+                <option value="index, nofollow">Index, No Follow</option>
+                <option value="noindex, nofollow">No Index, No Follow</option>
+            </select>
+        </div>
+    
+        <!-- Canonical URL -->
+        <div class="mb-4">
+            <label class="block font-semibold mb-2">Canonical URL</label>
+            <p class="text-sm text-gray-600 mb-2">Prevents duplicate content issues by specifying the preferred URL for indexing.</p>
+            <input type="text" class="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-400" placeholder="Enter canonical URL">
+        </div>
+    
+        <!-- Save Button -->
+        <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Save Changes</button>
+    </section>
+    </main>
+  </body>
+</html>

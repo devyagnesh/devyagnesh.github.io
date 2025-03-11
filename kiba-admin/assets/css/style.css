@@ -1,0 +1,15 @@
+.bg-custom-blue{
+    background-color: #1e40af;
+}
+
+.text-custom-blue{
+    color: #1e40af;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+}
+
+.no-scrollbar {
+    scrollbar-width: none !important;
+}
